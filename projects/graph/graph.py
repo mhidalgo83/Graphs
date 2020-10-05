@@ -87,10 +87,26 @@ class Graph:
         starting_vertex to destination_vertex in
         breath-first order.
         """
+        # Create an empty queue and enqueue A PATH TO the starting vertex ID
         q = Queue()
-        q.enqueue(starting_vertex)
-        q.enqueue(destination_vertex)
-
+        q.enqueue([starting_vertex])
+        # Create a Set to store visited vertices
+        visited = set()
+        # While the queue is not empty...
+        while q.size() > 0:
+            # Dequeue the first PATH
+            path = q.dequeue()
+            # Grab the last vertex from the PATH
+            vert = path[-1]
+            if vert not in visited:
+                if vert is destination_vertex:
+                    return path
+                else:
+                    visited.add(vert)
+                    for neighbor in self.get_neighbors(vert):
+                        new_path = path + [neighbor]
+                        q.enqueue(new_path)
+    
     def dfs(self, starting_vertex, destination_vertex):
         """
         Return a list containing a path from
@@ -162,13 +178,13 @@ if __name__ == '__main__':
         1, 2, 4, 6, 3, 5, 7
     '''
     # graph.dft(1)
-    print(graph.dft_recursive(1))
+    # print(graph.dft_recursive(1))
 
     '''
     Valid BFS path:
         [1, 2, 4, 6]
     '''
-    # print(graph.bfs(1, 6))
+    print(graph.bfs(1, 6))
 
     '''
     Valid DFS paths:
