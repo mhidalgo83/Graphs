@@ -141,11 +141,6 @@ class Graph:
 
         This should be done using recursion.
         """
-        # if starting_vertex not in self.visited:
-        #     print(starting_vertex)
-        #     self.visited.add(starting_vertex)
-        #     for neighbor in self.get_neighbors(starting_vertex):
-        #         self.dft_recursive(neighbor)
         if visited is None:
                 visited = set()
         if starting_vertex not in visited:
