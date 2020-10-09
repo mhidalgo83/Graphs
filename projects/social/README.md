@@ -47,9 +47,9 @@ Note that in this sample, Users 3, 4 and 9 are not in User 1's extended social n
 ## 3. Questions
 
 1. To create 100 users with an average of 10 friends each, how many times would you need to call `add_friendship()`? Why?
-
+    By plugging in 100 and 10 into the `populate_graph` method (which is the number of users and the average number of friendships), the method would be called 500 times. This is based off the algorithm given to us.
 2. If you create 1000 users with an average of 5 random friends each, what percentage of other users will be in a particular user's extended social network? What is the average degree of separation between a user and those in his/her extended network?
-
+    
 
 
 ## 4. Stretch Goal

@@ -45,15 +45,6 @@ class SocialGraph:
         self.users[self.last_id] = User(name)
         self.friendships[self.last_id] = set()
 
-    def get_friends(self, friend_id):
-        friend_list = []
-        for friend in self.friendships:
-            if friend_id == friend:
-                for f in self.friendships[friend]:
-                    friend_list.append(f)
-        return friend_list
-    
-
     def populate_graph(self, num_users, avg_friendships):
         """
         Takes a number of users and an average number of friendships
@@ -113,6 +104,6 @@ if __name__ == '__main__':
     sg = SocialGraph()
     sg.populate_graph(10, 2)
     print(sg.friendships)
-    # print(sg.get_friends(1))
+    print("---------------")
     connections = sg.get_all_social_paths(1)
     print(connections)
